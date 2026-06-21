@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
 import model.Candidate;
 import model.Cat;
 import model.Person;
@@ -33,8 +34,8 @@ public class StreamPractice {
      */
     public Double getOddNumsAverage(List<Integer> numbers) {
         return IntStream.range(0, numbers.size())
-                .map(i -> (i & 1) == 1 ? numbers.get(i) - 1 : numbers.get(i))
-                .filter(n -> (n & 1) == 1)
+                .map(i -> (i % 2) != 0 ? numbers.get(i) - 1 : numbers.get(i))
+                .filter(n -> (n % 2) != 0)
                 .average()
                 .orElseThrow();
     }

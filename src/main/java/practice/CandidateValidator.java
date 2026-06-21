@@ -1,7 +1,6 @@
 package practice;
 
 import model.Candidate;
-
 import java.util.function.Predicate;
 
 public class CandidateValidator implements Predicate<Candidate> {
@@ -15,7 +14,7 @@ public class CandidateValidator implements Predicate<Candidate> {
         int startYear = Integer.parseInt(years[0]);
         int endYear = Integer.parseInt(years[1]);
         int yearsInUkraine = endYear - startYear;
-        return candidate.getAge() > MIN_AGE
+        return candidate.getAge() >= MIN_AGE
                 && candidate.isAllowedToVote()
                 && NATIONALITY.equals(candidate.getNationality())
                 && yearsInUkraine >= MIN_YEARS_IN_UKRAINE;

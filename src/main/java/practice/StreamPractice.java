@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 import model.Candidate;
 import model.Cat;
 import model.Person;
@@ -25,7 +24,6 @@ public class StreamPractice {
                 .filter(r -> (r % 2) == 0)
                 .min()
                 .orElseThrow(() -> new RuntimeException("Can't get min value from list: " + numbers));
-
     }
 
     /**
@@ -87,7 +85,6 @@ public class StreamPractice {
                 .flatMap(p -> p.getCats().stream())
                 .map(Cat::getName)
                 .collect(Collectors.toList());
-
     }
 
     /**
@@ -109,6 +106,5 @@ public class StreamPractice {
                 .map(Candidate::getName)
                 .sorted()
                 .collect(Collectors.toList());
-
     }
 }
